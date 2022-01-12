@@ -7,7 +7,7 @@ inputs:
   deployment:
     description: "Deployment name"
     required: true
-  container-name:
+  container_name:
     description: "Container name"
     required: true
   image:
