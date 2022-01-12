@@ -1,0 +1,21 @@
+name: "Kubernetes Deploy Action"
+description: "Updates image for a K8s deployment and waits for rollout"
+branding:
+  icon: 'anchor'  
+  color: 'blue'
+inputs:
+  deployment:
+    description: "Deployment name"
+    required: true
+  container-name:
+    description: "Container name"
+    required: true
+  image:
+    description: "Image to update to"
+    required: true
+outputs:
+  result:
+    description: "Output of the kubectl command run"
+runs:
+  using: "docker"
+  image: "Dockerfile"
