@@ -6,6 +6,8 @@ export KUBECONFIG=kubeconfig
 echo ::echo::on
 env
 
+echo $INPUT_DEPLOYMENT
+
 
 # status=$?
 # echo ::set-output name=result::$result
