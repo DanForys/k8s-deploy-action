@@ -18,4 +18,4 @@ outputs:
     description: "Output of the kubectl command run"
 runs:
   using: "docker"
-  image: "Dockerfile"
+  image: "docker://danforys/k8s-deploy-action:latest"
