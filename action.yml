@@ -1,21 +1,18 @@
 name: "Kubernetes Deploy Action"
-description: "Updates image for a K8s deployment and waits for rollout"
+description: "Updates Kubernetes resources with YTT templating."
 branding:
-  icon: 'anchor'  
-  color: 'blue'
+  icon: "anchor"
+  color: "blue"
 inputs:
-  deployment:
-    description: "Deployment name"
+  template_dir:
+    description: "Location of YTT templates or Kubernetes yaml"
     required: true
-  container_name:
-    description: "Container name"
-    required: true
-  image:
-    description: "Image to update to"
-    required: true
+  template_values:
+    description: "YAML string of data values to set in the templates"
+    required: false
 outputs:
   result:
     description: "Output of the kubectl command run"
 runs:
   using: "docker"
-  image: "docker://danforys/k8s-deploy-action:latest"
+  image: "docker://danforys/k8s-deploy-action:ytt-templating"
