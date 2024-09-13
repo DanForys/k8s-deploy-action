@@ -2,7 +2,7 @@
 
 A GitHub action to apply Kubernetes templates with [ytt](https://carvel.dev/ytt/) templating.
 
-## Usage
+## Usage
 
 Example action file:
 
