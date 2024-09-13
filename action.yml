@@ -13,9 +13,12 @@ inputs:
   await_rollout_for_deployment:
     description: "Deployment name to await a successful rollout status"
     required: false
+  delete:
+    description: "Delete all the resources in template_dir"
+    required: false
 outputs:
   result:
     description: "Output of the kubectl command run"
 runs:
   using: "docker"
-  image: "docker://danforys/k8s-deploy-action:v2"
+  image: "docker://danforys/k8s-deploy-action:v3"

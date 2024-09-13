@@ -29,5 +29,7 @@ jobs:
           await_rollout_for_deployment: my-deployment-name
           # Optional inline string YAML file of values to be used by ytt
           template_values: |
-            docker_image: danforys/theanimator:pr${{ github.event.pull_request.number}}-${{ steps.shashort.outputs.sha_short }}
+            docker_image: repo/appname:pr${{ github.event.pull_request.number}}-${{ steps.shashort.outputs.sha_short }}
+          # Set delete to a non-empty value to tear down the resources. Useful for ephemeral dev or PR apps.
+          # delete: true
 ```
