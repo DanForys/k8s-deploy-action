@@ -21,4 +21,4 @@ outputs:
     description: "Output of the kubectl command run"
 runs:
   using: "docker"
-  image: "docker://danforys/k8s-deploy-action:debug-multiline"
+  image: "docker://danforys/k8s-deploy-action:v3"
