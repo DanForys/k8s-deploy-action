@@ -4,7 +4,7 @@ echo ${KUBE_CONFIG_DATA} | base64 -d > kubeconfig
 export KUBECONFIG=kubeconfig
 
 echo ::echo::on
-echo ${INPUT_TEMPLATE_VALUES} > template_values.yaml
+echo -e "${INPUT_TEMPLATE_VALUES}" > template_values.yaml
 
 cat ./template_values.yaml
 
