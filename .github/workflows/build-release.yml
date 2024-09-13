@@ -3,7 +3,7 @@ name: Build & Release
 on:
   push:
     branches:
-      - ytt-templating
+      - main
 
 jobs:
   build:
@@ -14,10 +14,12 @@ jobs:
         run: >
           docker build .
           --tag danforys/k8s-deploy-action:${GITHUB_SHA:0:7}
-          --tag danforys/k8s-deploy-action:ytt-templating
+          --tag danforys/k8s-deploy-action:v2
+          --tag danforys/k8s-deploy-action:latest
       - name: Docker Hub Login
         run: docker login --username danforys --password ${{ secrets.DOCKER_HUB_TOKEN }}
       - name: Docker Push
         run: |
           docker push danforys/k8s-deploy-action:${GITHUB_SHA:0:7}
-          docker push danforys/k8s-deploy-action:ytt-templating
+          docker push danforys/k8s-deploy-action:v2
+          docker push danforys/k8s-deploy-action:latest
