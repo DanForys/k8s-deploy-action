@@ -6,6 +6,8 @@ export KUBECONFIG=kubeconfig
 echo ::echo::on
 echo ${INPUT_TEMPLATE_VALUES} > template_values.yaml
 
+cat ./template_values.yaml
+
 ytt -f ${INPUT_TEMPLATE_DIR} --data-values-file ./template_values.yaml | kubectl apply -f -
 deployStatus=$?
 if [[ $deployStatus -ne 0 ]]; then exit 1; fi
