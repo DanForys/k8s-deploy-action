@@ -11,7 +11,7 @@ inputs:
     description: "YAML string of data values to set in the templates"
     required: false
   await_rollout_for_deployment:
-    description: "Deplyment name to await a successful rollout status"
+    description: "Deployment name to await a successful rollout status"
     required: false
 outputs:
   result:
